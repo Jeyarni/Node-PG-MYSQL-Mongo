@@ -1,5 +1,9 @@
-
-mongoose
-  .connect("mongodb://localhost:27017/students", { useNewUrlParser: true })
-  .then(() => console.log("Connected to MongoDB..."))
-  .catch(err => console.error("could not connectDB...", err));
+const mongoose = require('mongoose');
+ module.exports = {
+     getConnection : function (){
+      mongoose.connect('mongodb://localhost/defectdb')
+      .then(()=>console.log('connected to mongoose db...'))
+      .catch(err=>console.error('could not connected db...',err))
+     } 
+  }
+ 
